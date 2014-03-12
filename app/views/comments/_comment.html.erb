@@ -1,0 +1,13 @@
+<p>
+  <strong>Mouse named </strong>
+  <%= comment.commenter %>
+  says... 
+<!--   <strong>Comment:</strong>
+ -->  <%= comment.body %>
+</p>
+ 
+<p>
+  <strong><%= link_to 'Remove this mouse saying...', [comment.post, comment],
+               method: :delete,
+               data: { confirm: 'Really?' } %></strong>
+</p>

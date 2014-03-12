@@ -1,0 +1,19 @@
+<p>
+	<h2><strong>Cat thought</strong></h2>
+	<%= @post.title %>
+</p>
+
+<p>
+	<h2><strong>The full story</strong></h2>
+	<%= @post.text %>
+</p>
+
+ 
+<h2>WAT?</h2>
+<%= render @post.comments %>
+ 
+<h2>The mouse says WAT?!</h2>
+<%= render "comments/form" %>
+ 
+<%= link_to 'Edit this cat thought', edit_post_path(@post) %><br><br>
+<%= link_to 'Return to cat hive mind', posts_path %>
