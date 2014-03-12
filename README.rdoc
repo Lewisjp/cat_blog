@@ -2,3 +2,4 @@
 
 This repo contains a basic Rails blog.
 
+{Cat Blog}[http://cat-blog.herokuapp.com/]
