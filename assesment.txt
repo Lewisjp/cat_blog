@@ -1,0 +1,64 @@
+How does rails communicate with the database?  Please be thorough in discussing all the config files and pieces of rails necessary to communicate with the database.
+	Rails framework configures and initializes your Ruby code, so you can focus on the MVC. 
+
+	Configuration order:
+
+	1. config/preinitializer.rb
+	2. config/environment.rb
+	3. config/environments/#{RAILS_ENV}.rb
+	4. plugin initialization
+	5. gem initialization
+	6. config/initializer/*.rb
+	7. all after_initialize blocks
+
+	Dissecting the config folder:
+	Environment-
+		development.rb - Default on local machine, your application's code is reloaded on every request and you don't have to restart the web server when you make code changes.
+		production.rb - Settings for deployment of your app to a general web server.
+		test.rb - Used for app testing
+
+	Initializers - Allow you to run particular code during or before startup. 
+
+	Database.yml - Defines the database for rails, such as the host, type (sqlite3 etc), credentials. 
+
+What is a resource?
+	A database table represented by a model and influenced by a controller.  The controller uses HTTP methods to make calls to the resource.  The user of the app performs CRUD operations through the resource.    
+
+
+What are the standard RESTful routes for a resource?
+	GET, displays URIs and content
+	POST, replaces content
+	PUT, creates content
+	DELETE, destroys content
+
+
+What is CRUD?
+	CRUD: Create, Read, Update and Delete
+	CRUD is a collection of user interface methods that allow for the viewing, searching and changing of data in a relational database app.  
+
+
+What is REST?
+	REST: Representational state transfer
+	REST is based on the concept of separation of concerns. Links are used to action transitions.  HTTP operations are used to change the state of the app, including GET, POST, PUT, DELETE.  REST relies on the idea of resources that cite specific data by an HTTP id.  
+
+
+What is the difference between CRUD and REST?
+	CRUD contains the HTTP verb and implements a behavior while REST is a recommended standard for URLs.
+	CRUD is the basic functions in the data in tables.
+	REST works with resources identified by a URL.  
+
+
+Describe the flow of a request from a users browser through the rails stack and back.
+	Routing places a request to the appropriate Controller.
+	The Controller receives requests.
+	Routes can be served by Actions.
+	Actions provide data to the View.
+	View displays the processed data to the user.
+
+
+What are HTTP verbs?
+	The HTTP verbs are used for restful resources, and include GET, POST, PUT, DELETE/ DESTROY.  These HTTP verbs or operations are used to indicate appropriate actions.
+
+
+Why do we use migrations.
+	Migrations are used to organize database tables, and allow you to modify them.  To create a table you run a migration through rake db:migrate. The user can then interact with the tables through your app.
